@@ -1,11 +1,13 @@
 // src/QACards.js
 import React, { useState } from 'react';
 import { qaData } from './data';
-import './QACards.css'; // We'll add some styles next
+import './QACards.css';
 
-
-function QACards() {
+function QACards({ category }) {
   const [openIndex, setOpenIndex] = useState(null);
+
+  // Filter data by the category prop
+  const filteredData = qaData.filter((item) => item.category === category);
 
   const handleCardClick = (index) => {
     setOpenIndex((prevIndex) => (prevIndex === index ? null : index));
@@ -13,7 +15,7 @@ function QACards() {
 
   return (
     <div className="qa-grid-container">
-      {qaData.map((item, index) => (
+      {filteredData.map((item, index) => (
         <div
           key={index}
           className="qa-card"
