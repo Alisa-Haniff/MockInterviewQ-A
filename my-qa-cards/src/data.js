@@ -4,7 +4,7 @@ export const qaData = [
   {
     category: 'Behavioral',
     question: 'Tell me about an accomplishment you are most proud of.',
-    answer: 'I am proud of completing my capstone project, where I developed a [specific project]. It required applying skills I had just learned and collaborating with a team to meet a challenging deadline.'
+    answer: 'I am proud of completing my capstone project, where I developed a [specific project]. It required applying skills I had just learned and collaborating with a team to meet a challenging deadline.  I helped break down the project into clear milestones, and I coordinated regular check-ins to ensure everyone stayed on track. I also took the initiative to research and integrate new frameworks and best practices into our project, guiding my teammates in their implementation. We successfully completed the capstone project on time, met all requirements, and even exceeded our professor’s expectations. This experience reinforced my ability to quickly apply newly acquired skills, collaborate effectively under pressure, and deliver a high-quality product—all of which made it one of my proudest accomplishments.'
   },
   {
     category: 'Behavioral',
@@ -14,7 +14,7 @@ export const qaData = [
   {
     category: 'Behavioral',
     question: 'How do you handle pressure?',
-    answer: 'During finals week, I had multiple deadlines to meet. I prioritized tasks, focused on one thing at a time, and reminded myself to stay calm, which helped me complete everything successfully.'
+    answer: 'During finals week, I had multiple important deadlines for exams and projects all happening around the same time. My goal was to complete each assignment thoroughly and on time, while also keeping stress levels in check. I started by listing out all my deadlines and prioritizing them based on their due dates and level of difficulty. Then, I worked on each task step-by-step rather than juggling everything at once, which helped me stay focused. I also built in brief breaks to clear my mind and practiced staying calm through quick mindfulness exercises. By staying organized, prioritizing effectively, and maintaining my composure, I was able to complete all my projects and exams successfully. This approach not only helped me meet my deadlines but also ensured I produced quality work under pressure.'
   },
   {
     category: 'Behavioral',
@@ -28,44 +28,20 @@ export const qaData = [
   },
   {
     category: 'Behavioral',
-    question: '',
-    answer: ''
+    question: 'Tell me about a time you worked on a team project. What was your role, and how did you contribute to the team’s success?',
+    answer: 'In school I often had to work on group projects. Recently I had a group project with a tight deadline and we noticed one of our teammates was consistently behind on their tasks, which started to impact our overall progress. To address this, I proposed holding weekly check-ins so that everyone could share updates and address any roadblocks early. I also created a simple task tracker—a spreadsheet that listed each person’s responsibilities, deadlines, and any issues that arose. This helped us maintain visibility on everyone’s progress. By implementing these check-ins and using the task tracker, we were able to spot problems sooner, offer help where needed, and keep the project on schedule. In the end, we delivered our assignment on time and received positive feedback from the professor on our teamwork and organization.'
+  },
+  {
+    category: 'Behavioral',
+    question: 'Tell me about yourself. ',
+    answer: 'I’m currently a college student majoring in Computer Science. I’ve always been fascinated by technology and how it can solve real-world problems, which led me to learn different programming languages and work on group projects. I really enjoy collaborating with others—whether it’s brainstorming new ideas or debugging code—because I find that teamwork often sparks creativity. Now, as I’m starting my career, I’m eager to keep learning and growing my skill set. I believe that staying curious and adaptable will help me contribute effectively to any team and tackle new challenges head-on.'
   },
   {
     category: 'Behavioral',
     question: '',
     answer: ''
   },
-  {
-    category: 'Behavioral',
-    question: '',
-    answer: ''
-  },
-  {
-    category: 'Behavioral',
-    question: '',
-    answer: ''
-  },
-  {
-    category: 'Behavioral',
-    question: '',
-    answer: ''
-  },
-  {
-    category: 'Behavioral',
-    question: '',
-    answer: ''
-  },
-  {
-    category: 'Behavioral',
-    question: '',
-    answer: ''
-  },
-  {
-    category: 'Behavioral',
-    question: '',
-    answer: ''
-  },
+  
   {
     category: 'Technical',
     question: 'What is your process for writing and testing code? ',
@@ -121,19 +97,6 @@ export const qaData = [
     question: '',
     answer: ''
   },
-  {
-    category: 'Technical',
-    question: '',
-    answer: ''
-  },
-  {
-    category: 'Technical',
-    question: '',
-    answer: ''
-  },{
-    category: 'Technical',
-    question: '',
-    answer: ''
-  },
+
 
 ];
