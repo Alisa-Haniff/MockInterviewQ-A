@@ -20,6 +20,20 @@ function BehavioralPrep() {
     setShowAnswer((prev) => ({ ...prev, [index]: !prev[index] }));
   };
 
+  const handleSubmit = () => {
+    if (groupProjectResponse.trim()) {
+      alert(`Your response has been submitted: ${groupProjectResponse}`);
+      setGroupProjectResponse(''); // Reset the text box
+    } else {
+      alert('Please enter your response before submitting!');
+    }
+  };
+
+  const handleMorePractice = () => {
+    setRandomQuestions(getRandomQuestions());
+    setShowAnswer({}); // Reset the answers visibility
+  };
+
   return (
     <div className="App">
       <div className="category-title">Prepare for Your Behavioral Interview</div>
@@ -54,6 +68,20 @@ function BehavioralPrep() {
             placeholder="Share your experience here..."
           />
           <br />
+          <button
+            onClick={handleSubmit}
+            style={{
+              marginTop: '10px',
+              padding: '10px 20px',
+              backgroundColor: '#4CAF50',
+              color: 'white',
+              border: 'none',
+              borderRadius: '4px',
+              cursor: 'pointer',
+            }}
+          >
+            Submit
+          </button>
         </div>
 
         <div>
@@ -76,6 +104,22 @@ function BehavioralPrep() {
               )}
             </div>
           ))}
+
+          {/* Button for more practice */}
+          <button
+            onClick={handleMorePractice}
+            style={{
+              marginTop: '20px',
+              padding: '10px 20px',
+              backgroundColor: '#007BFF',
+              color: 'white',
+              border: 'none',
+              borderRadius: '4px',
+              cursor: 'pointer',
+            }}
+          >
+            Click here for more practice
+          </button>
         </div>
       </div>
     </div>
