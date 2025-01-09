@@ -85,7 +85,7 @@ function BehavioralPrep() {
         </div>
 
         <div>
-          <h2>Relatable Questions</h2>
+          <h2>Common Behavioral Questions</h2>
           <p>
             Can you relate your situation to one of these questions below? Click a question card to
             see a sample answer.
