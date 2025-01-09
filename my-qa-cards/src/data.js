@@ -41,62 +41,7 @@ export const qaData = [
     question: '',
     answer: ''
   },
-  
-  {
-    category: 'Technical',
-    question: 'What is your process for writing and testing code? ',
-    answer: 'My process for writing and testing code begins with understanding the requirements of the project. I often like to draw diagrams to visualize the structure and flow of the code. This helps me clarify where to start and identify what needs to be done. Once I have a clear plan, I write the code in small, manageable increments, focusing on one piece of functionality at a time. After implementing a section, I immediately test it to ensure it works as intended. I find that testing early and often helps catch issues before they become more significant problems. Overall, I believe that clear planning, continuous testing, and collaboration with my team are key components of my coding process.'
-  },
-  {
-    category: 'Technical',
-    question: 'Explain the concept of Big O notation.',
-    answer: 'Big O notation is used to describe the time complexity...'
-  },
- {
-    category: 'Technical',
-    question: '',
-    answer: ''
-  },
-  {
-    category: 'Technical',
-    question: '',
-    answer: ''
-  },
-  {
-    category: 'Technical',
-    question: '',
-    answer: ''
-  },
-  {
-    category: 'Technical',
-    question: '',
-    answer: ''
-  },
-  {
-    category: 'Technical',
-    question: '',
-    answer: ''
-  },
-  {
-    category: 'Technical',
-    question: '',
-    answer: ''
-  },
-  {
-    category: 'Technical',
-    question: '',
-    answer: ''
-  },
-  {
-    category: 'Technical',
-    question: '',
-    answer: ''
-  },
-  {
-    category: 'Technical',
-    question: '',
-    answer: ''
-  },
+ 
 
 
 ];

@@ -5,24 +5,64 @@
   min-height: 100vh;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
 }
 
 .category-title {
-  background-color: #4CAF50; /* A nice green bar behind the title */
+  background-color: #4caf50; /* A nice green bar */
   color: #fff;
-  margin: 0;
-  padding: 10px 20px;
-  text-align: left;
-  font-size: 1.5rem;
-  font-weight: 600;
+  padding: 20px 0; /* Extra padding for a better banner look */
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  width: 100%; /* Full width */
 }
-.star-intro {
-  margin: 20px;
+
+.content-container {
+  max-width: 800px; /* Limit content width */
+  margin: 20px; /* Add spacing around the content */
   padding: 10px;
-  background-color: #f5f5f5; /* Just an example color */
-  border-radius: 4px;
+  text-align: left; /* Left-align the content */
+}
+
+.star-intro {
+  margin: 20px 0;
+  padding: 15px;
+  background-color: #f5f5f5; /* Light gray background */
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
 .star-intro h2 {
   margin-top: 0;
+}
+
+.question-card {
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Card shadow */
+  cursor: pointer;
+  background-color: #fff;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.question-card:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+.question-card p {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.answer-text {
+  margin-top: 10px;
+  color: #666; /* Dark gray text */
+  font-style: italic;
 }

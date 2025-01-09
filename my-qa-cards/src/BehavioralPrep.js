@@ -1,48 +1,83 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { qaData } from './data';
+import './App.css'; // Import the CSS file
 
 function BehavioralPrep() {
-  // This state will store the user’s response about collaborating on a group project
   const [groupProjectResponse, setGroupProjectResponse] = useState('');
+  const [randomQuestions, setRandomQuestions] = useState([]);
+  const [showAnswer, setShowAnswer] = useState({});
 
-  // Optional handler for submission (you can expand this later to save the input, send it to a server, etc.)
-  const handleSubmit = () => {
-    console.log(groupProjectResponse);
-    alert('Your response has been captured!');
+  const getRandomQuestions = () => {
+    const shuffled = [...qaData].sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, 3);
+  };
+
+  useEffect(() => {
+    setRandomQuestions(getRandomQuestions());
+  }, []);
+
+  const toggleAnswer = (index) => {
+    setShowAnswer((prev) => ({ ...prev, [index]: !prev[index] }));
   };
 
   return (
-    <div style={{ maxWidth: '600px', margin: '0 auto', padding: '1rem' }}>
-      <h1>Prepare for Your Behavioral Interview</h1>
-      <p>
-        We have found that most companies prefer you to use the STAR Method when answering
-        interview questions. Are you familiar with the STAR method? If not, below is a short video
-        to explain:
-      </p>
-      <p>
-        <a
-          href="https://www.youtube.com/watch?v=WRLF8ULhZmw"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          STAR Method Video
-        </a>
-      </p>
+    <div className="App">
+      <div className="category-title">Prepare for Your Behavioral Interview</div>
+      <div className="content-container">
+        <div className="star-intro">
+          <h2>STAR Method Overview</h2>
+          <p>
+            We have found that most companies prefer you to use the STAR Method when answering
+            interview questions. Are you familiar with the STAR method? If not, below is a short
+            video to explain:
+          </p>
+          <p>
+            <a
+              href="https://www.youtube.com/watch?v=WRLF8ULhZmw"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              STAR Method Video
+            </a>
+          </p>
+        </div>
 
-      <h2>Group Project Collaboration</h2>
-      <p>
-        Think of a time you had to collaborate on a group project. Please write it below:
-      </p>
-      <textarea
-        style={{ width: '100%', height: '100px' }}
-        value={groupProjectResponse}
-        onChange={(e) => setGroupProjectResponse(e.target.value)}
-        placeholder="Share your experience here..."
-      />
+        <div>
+          <h2>Group Project Collaboration</h2>
+          <p>
+            Think of a time you had to collaborate on a group project. Please write it below:
+          </p>
+          <textarea
+            style={{ width: '100%', height: '100px' }}
+            value={groupProjectResponse}
+            onChange={(e) => setGroupProjectResponse(e.target.value)}
+            placeholder="Share your experience here..."
+          />
+          <br />
+        </div>
 
-      <br />
-      <button onClick={handleSubmit} style={{ marginTop: '1rem' }}>
-        Submit
-      </button>
+        <div>
+          <h2>Relatable Questions</h2>
+          <p>
+            Can you relate your situation to one of these questions below? Click a question card to
+            see a sample answer.
+          </p>
+          {randomQuestions.map((item, index) => (
+            <div
+              key={index}
+              className="question-card"
+              onClick={() => toggleAnswer(index)}
+            >
+              <p>{item.question}</p>
+              {showAnswer[index] && (
+                <p className="answer-text">
+                  <strong>Sample Answer:</strong> {item.answer}
+                </p>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
