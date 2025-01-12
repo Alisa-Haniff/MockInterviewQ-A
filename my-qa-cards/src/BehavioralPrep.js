@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { qaData } from './data';
+import { level1Questions, level2Questions, level3Questions } from './questionsData';
 import './App.css'; // Import the CSS file
 
 function BehavioralPrep() {
@@ -7,13 +7,20 @@ function BehavioralPrep() {
   const [randomQuestions, setRandomQuestions] = useState([]);
   const [showAnswer, setShowAnswer] = useState({});
 
-  const getRandomQuestions = () => {
-    const shuffled = [...qaData].sort(() => 0.5 - Math.random());
-    return shuffled.slice(0, 3);
+  // Function to get random questions for each level
+  const getRandomQuestionsByLevel = () => {
+    const level1 = level1Questions[Math.floor(Math.random() * level1Questions.length)];
+    const level2 = level2Questions[Math.floor(Math.random() * level2Questions.length)];
+    const level3 = level3Questions[Math.floor(Math.random() * level3Questions.length)];
+    return [
+      { level: 1, question: level1 },
+      { level: 2, question: level2 },
+      { level: 3, question: level3 },
+    ];
   };
 
   useEffect(() => {
-    setRandomQuestions(getRandomQuestions());
+    setRandomQuestions(getRandomQuestionsByLevel());
   }, []);
 
   const toggleAnswer = (index) => {
@@ -30,7 +37,7 @@ function BehavioralPrep() {
   };
 
   const handleMorePractice = () => {
-    setRandomQuestions(getRandomQuestions());
+    setRandomQuestions(getRandomQuestionsByLevel());
     setShowAnswer({}); // Reset the answers visibility
   };
 
@@ -57,9 +64,9 @@ function BehavioralPrep() {
         </div>
 
         <div>
-          <h2>Group Project Collaboration</h2>
+          <h2>Brainstorming Collaboration For An Interview</h2>
           <p>
-            Think of a time you had to collaborate on a group project. Please write it below:
+            Think of a senerio that can relate to a possible interview question. For some topic ideas, you can think of an achievement, envolement in an organization or project, etc; 
           </p>
           <textarea
             style={{ width: '100%', height: '100px' }}
@@ -85,21 +92,28 @@ function BehavioralPrep() {
         </div>
 
         <div>
-          <h2>Common Behavioral Questions</h2>
+          <h2>Common behavioral questions by level that can give you an idea of how to relate it to your senerio you wrote above</h2>
           <p>
-            Can you relate your situation to one of these questions below? Click a question card to
-            see a sample answer.
+            Each card displays a random question from its corresponding level. Click a card to see
+            a sample answer.
           </p>
           {randomQuestions.map((item, index) => (
             <div
               key={index}
               className="question-card"
+              style={{
+                border: '1px solid #ccc',
+                borderRadius: '8px',
+                padding: '15px',
+                marginBottom: '10px',
+                background: '#f9f9f9',
+              }}
               onClick={() => toggleAnswer(index)}
             >
-              <p>{item.question}</p>
+              <p><strong>Level {item.level}:</strong> {item.question}</p>
               {showAnswer[index] && (
                 <p className="answer-text">
-                  <strong>Sample Answer:</strong> {item.answer}
+                  <strong>Sample Answer:</strong> Answer placeholder for Level {item.level}.
                 </p>
               )}
             </div>
@@ -127,3 +141,4 @@ function BehavioralPrep() {
 }
 
 export default BehavioralPrep;
+
